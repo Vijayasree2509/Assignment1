@@ -1,10 +1,27 @@
 package com.automate.service;
 
+import com.automate.model.Date;
+import com.automate.model.Employee;
+import com.automate.model.Project;
 import com.automate.repository.ProjectRepository;
 
-public class ProjectService {
-    private ProjectRepository projectRepository=new ProjectRepository();
-    public static int createProject(String nameOfProject, String startDate, String endDate){
+import java.util.Collection;
+import java.util.List;
 
+public class ProjectService {
+
+    private ProjectRepository projectRepository=new ProjectRepository();
+    private int uniqueIdentifier;
+    public static void createProject(String nameOfProject, Date startDate, Date endDate){
+
+        Project project = new Project(nameOfProject,startDate,endDate,ProjectIdGenerator.ProjectId());
+        ProjectRepository.save(project);
+        project.displayInformation();
+
+    }
+
+    public List<Project> listProject(){
+        List<Project> project=projectRepository.fetchAll();
+        return project;
     }
 }
