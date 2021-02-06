@@ -1,11 +1,8 @@
 package com.automate.service;
 
-import com.automate.model.Date;
-import com.automate.model.Employee;
 import com.automate.model.Project;
 import com.automate.repository.ProjectRepository;
 
-import java.util.Collection;
 import java.util.List;
 
 public class ProjectService {

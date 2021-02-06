@@ -1,6 +1,4 @@
 package com.automate.Controller;
-import com.automate.model.Date;
-import com.automate.model.Employee;
 import com.automate.model.Project;
 import com.automate.service.ProjectService;
 
